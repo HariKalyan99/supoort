@@ -116,6 +116,10 @@ export const DashboardSidebar = () => {
                   <SidebarMenuButton
                     asChild
                     isActive={isActive(item.url)}
+                    // className={cn(
+                    //   isActive(item.url) &&
+                    //     "bg-gradient-to-b from-sidebar-primary to-[oklch(0.7058 0.0777 302.0489)]! text-sidebar-primary-foreground! hover:to-[oklch(0.7058 0.0777 302.0489)]/90"
+                    // )} // not necessarily
                     tooltip={item.title}
                   >
                     <Link href={item.url}>

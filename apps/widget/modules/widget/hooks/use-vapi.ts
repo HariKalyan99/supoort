@@ -15,7 +15,7 @@ export const useVapi = () => {
 
   useEffect(() => {
     // testing the vapi api, otherwise it will be inputed from the customers as they provide when they are creating on their own
-    const vapiInstance = new Vapi("cd654046-59d5-424e-9803-d0b484c64f62");
+    const vapiInstance = new Vapi("");
 
     setVapi(vapiInstance);
 
@@ -58,7 +58,7 @@ export const useVapi = () => {
     setIsConnecting(true);
 
     if (vapi) {
-      vapi.start("ead82382-aff3-4a3d-80ce-7fa1334c3c10"); // tom's id, replaced in the further
+      vapi.start(""); // tom's id, replaced in the further
     }
   };
 

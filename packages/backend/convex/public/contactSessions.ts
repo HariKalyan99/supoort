@@ -7,7 +7,6 @@ export const create = mutation({
   args: {
     name: v.string(),
     email: v.string(),
-    expiresAt: v.number(),
     organizationId: v.string(),
     metadata: v.optional(
       v.object({

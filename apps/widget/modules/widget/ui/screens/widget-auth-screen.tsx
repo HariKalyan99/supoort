@@ -35,8 +35,6 @@ export const WidgetAuthScreen = () => {
   const createContactSession = useMutation(api.public.contactSessions.create);
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const now = Date.now();
-    const expiresAt = now + 24 * 60 * 60 * 1000;
     if (!organizationId) return;
 
     const metadata: Doc<"contactSessions">["metadata"] = {
@@ -57,7 +55,6 @@ export const WidgetAuthScreen = () => {
     const contactSessionsId = await createContactSession({
       ...values,
       organizationId,
-      expiresAt,
       metadata,
     });
 

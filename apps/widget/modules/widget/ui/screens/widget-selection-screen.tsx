@@ -6,6 +6,7 @@ import { ChevronRight, MessageSquareTextIcon } from "lucide-react";
 import { useAtomValue, useSetAtom } from "jotai";
 import {
   contactSessionIdAtomFamily,
+  conversationIdAtom,
   errorMessageAtom,
   organizationIdAtom,
   screenAtom,
@@ -17,6 +18,8 @@ import { useState } from "react";
 export const WidgetSelectionScreen = () => {
   const setScreen = useSetAtom(screenAtom);
   const setErrorMessage = useSetAtom(errorMessageAtom);
+  const setConversationId = useSetAtom(conversationIdAtom);
+
   const organizationId = useAtomValue(organizationIdAtom);
   const contactSessionId = useAtomValue(
     contactSessionIdAtomFamily(organizationId || "")
@@ -44,6 +47,7 @@ export const WidgetSelectionScreen = () => {
         organizationId,
       });
 
+      setConversationId(conversationId);
       setScreen("chat");
     } catch {
       setScreen("auth");
